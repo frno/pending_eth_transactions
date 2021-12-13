@@ -50,7 +50,7 @@ async fn main() -> Result<()> {
     info!("Unsubscribing and disconnecting");
 
     // Unsubscribe for messages
-    connection.unsubscribe_to_pending_tx_for("0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48").await?;
+    connection.unsubscribe_to_pending_tx_for("0x7be8076f4ea4a4ad08075c2508e481d6c946d12b").await?;
 
     // Disconnect from websocket
     connection.disconnect().await?;
