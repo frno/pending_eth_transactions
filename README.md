@@ -27,13 +27,13 @@ Please see examples folder for full source code.
     let connection = AlchemyPendingTransactionsWebsocket::connect(web3_ws_uri,keep_alive.clone()).await?;
 
     // Subscribe to address
-    // connection.subscribe_to_pending_tx_for("0x7be8076f4ea4a4ad08075c2508e481d6c946d12b").await?;
+    connection.subscribe_to_pending_tx_for("0x7be8076f4ea4a4ad08075c2508e481d6c946d12b").await?;
 
     // Poll for any new notifications
-    // let poll_result:Result<Option<Transaction>> = connection.poll_next();
+    let poll_result:Result<Option<Transaction>> = connection.poll_next();
 
     // Unsubscribe to address
-    // connection.unsubscribe_to_pending_tx_for("0x7be8076f4ea4a4ad08075c2508e481d6c946d12b").await?;
+    connection.unsubscribe_to_pending_tx_for("0x7be8076f4ea4a4ad08075c2508e481d6c946d12b").await?;
 
     // Disconnect from websocket
     connection.disconnect().await?;
